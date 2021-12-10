@@ -117,32 +117,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"main.js":[function(require,module,exports) {
-"use strict"; // const myKey = config.MY_KEY;
-// let url = "https://api.openweathermap.org/data/2.5/weather?q=calabar&appid=";
-// url += myKey;
-// fetch(url)
-//   .then((res) => res.json())
-//   .then((data) => {
-//     console.log(data);
-//     document.getElementById("app").innerHTML = `<p>${data.name}</p>`;
-//   });
+})({"../config.js":[function(require,module,exports) {
+/* eslint-disable linebreak-style */
 
-var components = {
-  body: document.querySelector("body"),
-  app: document.getElementById("app"),
-  navBar: document.createElement("nav")
+/* eslint-disable no-unused-vars */
+
+/* eslint-disable linebreak-style */
+
+/* eslint-disable quotes */
+var config = {
+  MY_KEY: "a99d8cdedadf296a8f570e38a1bf8bb2"
 };
-var body = components.body,
-    app = components.app,
-    navBar = components.navBar;
-var timer = setInterval(function () {
-  var date = new Date();
-  document.getElementById("time").innerHTML = "<p>".concat(date.toUTCString(), "</p>");
-}, 1000);
-navBar.innerHTML = "<nav class=\"navbar navbar-light bg-light\">\n  <div class=\"container-fluid d-flex .justify-content-lg-between\">\n    <div>\n      <a class=\"navbar-brand\">Kairos</a>\n    </div>\n    <div>\n      <i class=\"bi bi-list\"></i>\n    </div>\n  </div>\n</nav>\n\n<section>\n  <div class=\"time\" id=\"time\">\n  </div>\n</section>\n";
-body.appendChild(app);
-app.appendChild(navBar); // app.append(navBar);
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -347,5 +332,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
-//# sourceMappingURL=/main.1f19ae8e.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../config.js"], null)
+//# sourceMappingURL=/config.b984a977.js.map
