@@ -25,7 +25,7 @@ const timer = setInterval(() => {
     .substring(0, 8)}</p>`;
 }, 1000);
 
-navBar.innerHTML = `<nav class="navbar navbar-light bg-light">
+navBar.innerHTML = `<nav class="navbar navbar-light bg-light fixed-top">
   <div class="container-fluid d-flex .justify-content-lg-between">
     <div>
       <a class="navbar-brand fs-1">Kairos</a>
@@ -38,30 +38,29 @@ navBar.innerHTML = `<nav class="navbar navbar-light bg-light">
   </div>
 </nav>
 
-<section class="container">
-  <div class="time" id="time">
+<section class="container cnt">
+  <div class="time pt-5" id="time">
   </div>
   <div>
     <p class="fw-bolder fs-2">Port Harcourt</p>
   </div>
-</section>
 
-<section class="container">
   <div>
     <span class="fw-bold d-block degree">9&#176</span>
     <span class="fw-bold d-block">It's</span>
     <span class="fw-bold d-block">getting</span>
     <span class="fw-bold d-block">cold</span>
   </div>
-</section>
 
-<aside>
-  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
-  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-</svg>
-</aside>
+  <aside>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+    </svg>
+  </aside>
+  </section>
+  
 `;
 
-body.append(app);
+body.appendChild(app);
 app.appendChild(navBar);
 // app.append(navBar);

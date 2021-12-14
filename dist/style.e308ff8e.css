@@ -1,5 +1,9 @@
-html {
-  background-color: black;
+.cnt {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center ;
+  justify-items: center;
 }
 
 .degree {

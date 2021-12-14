@@ -140,8 +140,8 @@ var timer = setInterval(function () {
   var date = new Date();
   document.getElementById("time").innerHTML = "<p class=\"fw-bold fs-4\">".concat(date.toTimeString().substring(0, 8), "</p>");
 }, 1000);
-navBar.innerHTML = "<nav class=\"navbar navbar-light bg-light\">\n  <div class=\"container-fluid d-flex .justify-content-lg-between\">\n    <div>\n      <a class=\"navbar-brand fs-1\">Kairos</a>\n    </div>\n    <div>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" fill=\"currentColor\" class=\"bi bi-list\" viewBox=\"0 0 16 16\">\n        <path fill-rule=\"evenodd\" d=\"M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z\"/>\n      </svg>\n    </div>\n  </div>\n</nav>\n\n<section class=\"container\">\n  <div class=\"time\" id=\"time\">\n  </div>\n  <div>\n    <p class=\"fw-bolder fs-2\">Port Harcourt</p>\n  </div>\n</section>\n\n<section class=\"container\">\n  <div>\n    <span class=\"fw-bold d-block degree\">9&#176</span>\n    <span class=\"fw-bold d-block\">It's</span>\n    <span class=\"fw-bold d-block\">getting</span>\n    <span class=\"fw-bold d-block\">cold</span>\n  </div>\n</section>\n\n<aside>\n  <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" fill=\"currentColor\" class=\"bi bi-circle\" viewBox=\"0 0 16 16\">\n  <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"/>\n</svg>\n</aside>\n";
-body.append(app);
+navBar.innerHTML = "<nav class=\"navbar navbar-light bg-light fixed-top\">\n  <div class=\"container-fluid d-flex .justify-content-lg-between\">\n    <div>\n      <a class=\"navbar-brand fs-1\">Kairos</a>\n    </div>\n    <div>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" fill=\"currentColor\" class=\"bi bi-list\" viewBox=\"0 0 16 16\">\n        <path fill-rule=\"evenodd\" d=\"M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z\"/>\n      </svg>\n    </div>\n  </div>\n</nav>\n\n<section class=\"container cnt\">\n  <div class=\"time pt-5\" id=\"time\">\n  </div>\n  <div>\n    <p class=\"fw-bolder fs-2\">Port Harcourt</p>\n  </div>\n\n  <div>\n    <span class=\"fw-bold d-block degree\">9&#176</span>\n    <span class=\"fw-bold d-block\">It's</span>\n    <span class=\"fw-bold d-block\">getting</span>\n    <span class=\"fw-bold d-block\">cold</span>\n  </div>\n\n  <aside>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" fill=\"currentColor\" class=\"bi bi-circle\" viewBox=\"0 0 16 16\">\n      <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"/>\n    </svg>\n  </aside>\n  </section>\n  \n";
+body.appendChild(app);
 app.appendChild(navBar); // app.append(navBar);
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -171,7 +171,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58347" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54634" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
