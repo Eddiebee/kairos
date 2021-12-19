@@ -1,16 +1,30 @@
 "use strict";
-import config from "../config";
+import { toast, toastify } from "toastify-js";
+import config from "./../../config";
+import httpService from "./httpService";
 
 const myKey = config.MY_KEY,
-  city = "calabar";
+  city = "port harcourt";
 
 let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKey}`;
-// console.log(url);
-fetch(url)
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-    // document.getElementById("app").innerHTML = `<p>${data.name}</p>`;
+
+httpService
+  .get(url)
+  .then((response) => {
+    console.log(response);
+    let city = document.getElementById("city"),
+      temp = document.getElementById("temp"),
+      desc = document.getElementById("desc");
+    city.innerText = response.data.name;
+    temp.innerText = response.data.main.temp;
+    desc.innerText = response.data.weather[0].description.toUpperCase();
+  })
+  .catch((error) => {
+    alert(error);
+    console.log(error);
+  })
+  .then(() => {
+    // always executed
   });
 
 const components = {
@@ -50,12 +64,9 @@ navBar.innerHTML = `<nav class="navbar navbar-light bg-light fixed-top">
     </div>
 
     <div>
-      <span class="fw-bold d-block degree">9&#176</span>
-      <div class="description">
-        <span class="d-block desc">It's</span>
-        <span class="d-block desc">getting</span>
-        <span class="d-block desc">cold</span>
-      </div>
+      <span class="fw-bold degree" id="temp"></span>
+      <span class="fw-bold degree">&#176</span>
+      <span class="d-block desc" id="desc">It's getting cold</span>
     </div>
 
     <aside class="right-aside">
