@@ -1,14 +1,21 @@
+:root {
+  --primary-color: #ff873f;
+  --secondary-color: #0587f84b;
+  --tertiary-color: #0588f8;
+}
+
 body {
   background: url("/kairos-bg.49a226db.jpg") no-repeat;
   background-size: cover;
   font-family: "Karla", sans-serif;
+  overflow: hidden;
 }
 
 .cnt {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: rgba(172, 214, 238, 0.6);
+  background-color: #d1e4ffe0;
   justify-content: center;
   justify-items: center;
   /* filter: invert(); */
@@ -17,14 +24,61 @@ body {
 #time {
   width: 100%;
   height: 100px;
+  color: var(--tertiary-color);
+}
+
+.city {
+  font-weight: 800;
+  font-size: 3em;
+  color: var(--tertiary-color);
 }
 
 .degree {
-  font-size: 5em;
+  font-size: 6em;
+  color: var(--tertiary-color);
 }
 
 span {
-  font-size: 3em;
+  /* font-size: 1.4em; */
+}
+
+.desc {
+  color: #ff873f;
+  font-family: "Karla", sans-serif;
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+.brand {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--secondary-color);
+}
+
+.brand:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.right-aside {
+  position: absolute;
+  right: -50px;
+  /* z-index: -10px; */
+}
+
+.left-aside {
+  position: absolute;
+  left: -50px;
+  bottom: -50px;
+  /* z-index: -10px; */
 }
 
 
