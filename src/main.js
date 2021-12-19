@@ -1,8 +1,11 @@
 "use strict";
+import config from "../config";
 
-// const myKey = config.MY_KEY;
-// let url = "https://api.openweathermap.org/data/2.5/weather?q=calabar&appid=";
-// url += myKey;
+const myKey = config.MY_KEY,
+  city = "calabar";
+
+let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKey}`;
+console.log(url);
 // fetch(url)
 //   .then((res) => res.json())
 //   .then((data) => {
@@ -38,25 +41,27 @@ navBar.innerHTML = `<nav class="navbar navbar-light bg-light fixed-top">
   </div>
 </nav>
 
-<section class="container cnt">
-  <div class="time pt-5" id="time">
-  </div>
-  <div>
-    <p class="fw-bolder fs-2">Port Harcourt</p>
-  </div>
+<section class="cnt">
+  <div class="container">
+    <div class="time pt-5" id="time">
+    </div>
+    <div>
+      <p class="fw-bolder fs-2">Port Harcourt</p>
+    </div>
 
-  <div>
-    <span class="fw-bold d-block degree">9&#176</span>
-    <span class="fw-bold d-block">It's</span>
-    <span class="fw-bold d-block">getting</span>
-    <span class="fw-bold d-block">cold</span>
-  </div>
+    <div>
+      <span class="fw-bold d-block degree">9&#176</span>
+      <span class="fw-bold d-block">It's</span>
+      <span class="fw-bold d-block">getting</span>
+      <span class="fw-bold d-block">cold</span>
+    </div>
 
-  <aside>
-    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
-      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-    </svg>
-  </aside>
+    <aside>
+      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      </svg>
+    </aside>
+  </div>
   </section>
   
 `;
