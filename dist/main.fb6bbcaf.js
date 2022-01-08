@@ -556,18 +556,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return Toastify;
 });
 
-},{}],"../config.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var config = {
-  MY_KEY: "a99d8cdedadf296a8f570e38a1bf8bb2"
-};
-var _default = config;
-exports.default = _default;
 },{}],"../node_modules/axios/lib/helpers/bind.js":[function(require,module,exports) {
 'use strict';
 
@@ -2694,20 +2682,43 @@ var _default = {
   delete: _axios.default.delete
 };
 exports.default = _default;
-},{"axios":"../node_modules/axios/index.js"}],"js/main.js":[function(require,module,exports) {
+},{"axios":"../node_modules/axios/index.js"}],"../config.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var config = {
+  MY_KEY: "a99d8cdedadf296a8f570e38a1bf8bb2"
+};
+var _default = config;
+exports.default = _default;
+},{}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
 var _toastifyJs = require("toastify-js");
 
-var _config = _interopRequireDefault(require("./../../config"));
-
 var _httpService = _interopRequireDefault(require("./httpService"));
+
+var _config = _interopRequireDefault(require("./../../config"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var data = {}; // Getting user's location over here
+
+navigator.geolocation.getCurrentPosition(function (position) {
+  var _position$coords = position.coords,
+      latitude = _position$coords.latitude,
+      longitude = _position$coords.longitude;
+  data.latitude = latitude;
+  data.longitude = longitude;
+  console.log(data);
+});
 var myKey = _config.default.MY_KEY,
-    city = "port harcourt";
-var url = "https://api.openweathermap.org/data/2.5/weather?q=".concat(city, "&appid=").concat(myKey);
+    city = "port harcourt"; // let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKey}`;
+
+var url = "https://api.openweathermap.org/data/2.5/weather?lat=".concat(6.4474, "&lon=", 3.3903, "&appid=", myKey);
 
 _httpService.default.get(url).then(function (response) {
   console.log(response);
@@ -2735,10 +2746,10 @@ var timer = setInterval(function () {
   var date = new Date();
   document.getElementById("time").innerHTML = "<p class=\"fw-bold fs-4\">".concat(date.toTimeString().substring(0, 8), "</p>");
 }, 1000);
-navBar.innerHTML = "<nav class=\"navbar navbar-light bg-light fixed-top\">\n  <div class=\"container-fluid d-flex .justify-content-lg-between\">\n    <div>\n      <a class=\"secondary brand fs-1\">Kairos</a>\n    </div>\n    <div>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" fill=\"currentColor\" class=\"bi bi-list secondary\" viewBox=\"0 0 16 16\">\n        <path fill-rule=\"evenodd\" d=\"M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z\"/>\n      </svg>\n    </div>\n  </div>\n</nav>\n\n<section class=\"cnt\">\n  <div class=\"container\">\n    <div class=\"time pt-5\" id=\"time\">\n    </div>\n    <div>\n      <p class=\"city\" id=\"city\">Calabar</p>\n    </div>\n\n    <div>\n      <span class=\"fw-bold degree\" id=\"temp\"></span>\n      <span class=\"fw-bold degree\">&#176</span>\n      <span class=\"d-block desc\" id=\"desc\">It's getting cold</span>\n    </div>\n\n    <aside class=\"right-aside\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" fill=\"currentColor\" class=\"bi bi-circle primary\" viewBox=\"0 0 16 16\">\n        <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"/>\n      </svg>\n    </aside>\n    <aside class=\"left-aside\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" fill=\"currentColor\" class=\"bi bi-circle secondary\" viewBox=\"0 0 16 16\">\n        <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"/>\n      </svg>\n    </aside>\n  </div>\n  </section>\n  \n";
+navBar.innerHTML = "<nav class=\"navbar navbar-light bg-light fixed-top\">\n  <div class=\"container-fluid d-flex .justify-content-lg-between\">\n    <div>\n      <a class=\"secondary brand fs-1\">Kairos</a>\n    </div>\n    <div>\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"50\" height=\"50\" fill=\"currentColor\" class=\"bi bi-list secondary\" viewBox=\"0 0 16 16\">\n        <path fill-rule=\"evenodd\" d=\"M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z\"/>\n      </svg>\n    </div>\n  </div>\n</nav>\n\n<section class=\"cnt\">\n  <div class=\"container\">\n    <div class=\"time pt-5\" id=\"time\">\n    ...\n    </div>\n    <div>\n      <p class=\"city\" id=\"city\">...</p>\n    </div>\n\n    <div>\n      <span class=\"fw-bold degree\" id=\"temp\"></span>\n      <span class=\"fw-bold degree\">&#176</span>\n      <span class=\"d-block desc\" id=\"desc\">...</span>\n    </div>\n\n    <aside class=\"right-aside\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" fill=\"currentColor\" class=\"bi bi-circle primary\" viewBox=\"0 0 16 16\">\n        <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"/>\n      </svg>\n    </aside>\n    <aside class=\"left-aside\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" fill=\"currentColor\" class=\"bi bi-circle secondary\" viewBox=\"0 0 16 16\">\n        <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"/>\n      </svg>\n    </aside>\n  </div>\n  </section>\n  \n";
 body.appendChild(app);
 app.appendChild(navBar); // app.append(navBar);
-},{"toastify-js":"../node_modules/toastify-js/src/toastify.js","./../../config":"../config.js","./httpService":"js/httpService.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"toastify-js":"../node_modules/toastify-js/src/toastify.js","./httpService":"js/httpService.js","./../../config":"../config.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2766,7 +2777,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58725" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64707" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

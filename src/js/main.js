@@ -1,12 +1,22 @@
 "use strict";
 import { toast, toastify } from "toastify-js";
-import config from "./../../config";
 import httpService from "./httpService";
+import config from "./../../config";
 
+const data = {};
+
+// Getting user's location over here
+navigator.geolocation.getCurrentPosition((position) => {
+  let { latitude, longitude } = position.coords;
+  data.latitude = latitude;
+  data.longitude = longitude;
+  console.log(data);
+});
 const myKey = config.MY_KEY,
   city = "port harcourt";
 
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKey}`;
+// let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKey}`;
+let url = `https://api.openweathermap.org/data/2.5/weather?lat=${6.4474}&lon=${3.3903}&appid=${myKey}`;
 
 httpService
   .get(url)
@@ -58,15 +68,16 @@ navBar.innerHTML = `<nav class="navbar navbar-light bg-light fixed-top">
 <section class="cnt">
   <div class="container">
     <div class="time pt-5" id="time">
+    ...
     </div>
     <div>
-      <p class="city" id="city">Calabar</p>
+      <p class="city" id="city">...</p>
     </div>
 
     <div>
       <span class="fw-bold degree" id="temp"></span>
       <span class="fw-bold degree">&#176</span>
-      <span class="d-block desc" id="desc">It's getting cold</span>
+      <span class="d-block desc" id="desc">...</span>
     </div>
 
     <aside class="right-aside">
