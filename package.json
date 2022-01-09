@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "open-weather-icons": "^0.0.8",
     "toastify-js": "^1.11.2"
   }
 }

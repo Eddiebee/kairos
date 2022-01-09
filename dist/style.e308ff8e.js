@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\images\\kairos-bg.jpg":[["kairos-bg.49a226db.jpg","../images/kairos-bg.jpg"],"../images/kairos-bg.jpg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./..\\images\\kairos-bg.jpg":[["kairos-bg.49a226db.jpg","../images/kairos-bg.jpg"],"../images/kairos-bg.jpg"],"./fonts\\OpenWeatherIcons.eot":[["OpenWeatherIcons.5786f0c4.eot","fonts/OpenWeatherIcons.eot"],"fonts/OpenWeatherIcons.eot"],"./fonts\\OpenWeatherIcons.woff2":[["OpenWeatherIcons.029846d7.woff2","fonts/OpenWeatherIcons.woff2"],"fonts/OpenWeatherIcons.woff2"],"./fonts\\OpenWeatherIcons.woff":[["OpenWeatherIcons.f0549d85.woff","fonts/OpenWeatherIcons.woff"],"fonts/OpenWeatherIcons.woff"],"./fonts\\OpenWeatherIcons.ttf":[["OpenWeatherIcons.dbc311a6.ttf","fonts/OpenWeatherIcons.ttf"],"fonts/OpenWeatherIcons.ttf"],"./fonts\\OpenWeatherIcons.svg":[["OpenWeatherIcons.360ebb70.svg","fonts/OpenWeatherIcons.svg"],"fonts/OpenWeatherIcons.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64707" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60225" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
